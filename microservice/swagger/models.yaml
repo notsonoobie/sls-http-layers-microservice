@@ -1,0 +1,4 @@
+LoginDTO:
+  $ref: ./auth/models/loginmodel.yaml
+RegistrationDTO:
+  $ref: ./auth/models/registrationmodel.yaml

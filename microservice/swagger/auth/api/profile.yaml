@@ -1,0 +1,15 @@
+summary: 'Profile API'
+description: 'View Profile'
+tags:
+  - 'Auth'
+security:
+  - bearerAuth: []
+responses:
+  '200':
+    description: 'Successfull'
+  '400':
+    description: 'Bad Request'
+  '401':
+    description: 'Unauthorized'
+  '500':
+    description: 'Internal Server Error'

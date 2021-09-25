@@ -1,0 +1,55 @@
+openapi: 3.0.0
+
+info:
+  version: '2' # see note above about this being ignored
+  title: 'Serverless Microservice' # see note above about this being ignored
+  description: 'Serverless Microservice - API Documentation'
+  license:
+    name: 'Licensing'
+    url: 'https://github.com/notsonoobie/sls-http-layers-microservice/blob/master/LICENSE'
+
+tags:
+  - name: 'Auth'
+    description: 'Authentaction Services'
+  - name: 'Todo'
+    description: 'Todo Services'
+
+securityDefinitions:
+  bearerAuth:
+    type: 'apiKey'
+    name: 'Authorization'
+    scheme: 'bearer'
+    in: 'header'
+
+schemes:
+  - 'http'
+  - 'https'
+
+servers:
+  - url: https://api.example.com/{basePath}
+    description: Deployed Server
+    variables:
+      basePath:
+        enum:
+          - dev
+          - prod
+        default: dev
+  - url: http://localhost:{port}/{basePath}
+    description: Local MicroService
+    variables:
+      port:
+        enum:
+          - '8080'
+          - '8081'
+        default: '8080'
+      basePath:
+        enum:
+          - dev
+          - prod
+        default: dev
+
+paths:
+  $ref: ./path.yaml
+
+definitions:
+  $ref: ./models.yaml

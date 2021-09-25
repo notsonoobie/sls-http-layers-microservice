@@ -1,0 +1,18 @@
+summary: 'Registration API'
+description: 'Register using Email and Password'
+tags:
+  - 'Auth'
+parameters:
+  - in: body
+    name: body
+    description: Registration Request
+    required: true
+    schema:
+      $ref: '#/definitions/RegistrationDTO'
+responses:
+  '200':
+    description: 'Successfull'
+  '400':
+    description: 'Bad Request'
+  '500':
+    description: 'Internal Server Error'

@@ -62,6 +62,18 @@ npm run deploy:dev
 npm run deploy:prod
 ```
 
+7. Build Swagger.JSON
+
+```sh
+npm run build:swagger
+```
+
+6. Start Swagger UI (Port - 3000 HTTP)
+
+```sh
+npm run start:swagger
+```
+
 ---
 
 **_After Deployment_**

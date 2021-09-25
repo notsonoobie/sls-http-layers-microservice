@@ -6,12 +6,16 @@
   "scripts": {
     "deploy:dev:all": "make deployDev",
     "deploy:prod:all": "make deployProd",
-    "start:microservice": "make runall -j"
+    "start:microservice": "make runall -j",
+    "build:swagger": "make buildSwagger",
+    "start:swagger": "npm run build:swagger && http-server swagger/ -p 3000 -c 0"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "http-server": "^13.0.2",
+    "multi-file-swagger": "^2.3.0",
     "serverless-dotenv-plugin": "^3.9.0",
     "serverless-middleware": "^0.0.14",
     "serverless-offline": "^8.2.0",

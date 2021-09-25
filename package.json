@@ -6,7 +6,9 @@
     "setup:dev": "npm --prefix ./microservice i",
     "start:microservice": "npm --prefix ./microservice run start:microservice",
     "deploy:dev": "npm --prefix ./microservice run deploy:dev:all",
-    "deploy:prod": "npm --prefix ./microservice run deploy:prod:all"
+    "deploy:prod": "npm --prefix ./microservice run deploy:prod:all",
+    "build:swagger": "npm --prefix ./microservice run build:swagger",
+    "start:swagger": "npm --prefix ./microservice run start:swagger"
   },
   "keywords": [],
   "author": "",

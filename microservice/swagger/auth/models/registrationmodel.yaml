@@ -1,0 +1,14 @@
+type: 'object'
+properties:
+  name:
+    type: 'string'
+    description: 'Full Name'
+    example: 'Rahul Gupta'
+  email:
+    type: 'string'
+    description: 'Email Address'
+    example: 'rahul.gupta@acc.ltd'
+  password:
+    type: 'string'
+    description: 'Password'
+    example: 'Strong_P1@'

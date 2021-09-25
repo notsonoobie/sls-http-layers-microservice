@@ -23,8 +23,12 @@ deployProd:
 	sls deploy --stage prod --app auth
 	sls deploy --stage prod --app todo
 
+buildSwagger:
+	cd swagger/ && multi-file-swagger swagger-config.yaml > index.json
+
 .PHONY: runall
 .PHONY: runauth
 .PHONY: runtodo
 .PHONY: deployDev
 .PHONY: deployProd
+.PHONY: buildSwagger

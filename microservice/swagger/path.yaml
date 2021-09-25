@@ -1,0 +1,11 @@
+/login:
+  post:
+    $ref: ./auth/api/login.yaml
+
+/register:
+  post:
+    $ref: ./auth/api/registration.yaml
+
+/profile:
+  get:
+    $ref: ./auth/api/profile.yaml
