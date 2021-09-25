@@ -44,19 +44,19 @@ npm run start:microservice
 cd microservice/ && make runtodo
 ```
 
-3. Start Auth Service
+4. Start Auth Service
 
 ```sh
 cd microservice/ && make runauth
 ```
 
-3. Dev Deployment
+5. Dev Deployment
 
 ```sh
 npm run deploy:dev
 ```
 
-3. Production Deployment
+6. Production Deployment
 
 ```sh
 npm run deploy:prod
@@ -64,7 +64,6 @@ npm run deploy:prod
 
 ---
 
-___After Deployment___
+**_After Deployment_**
 
 ![image](https://user-images.githubusercontent.com/54475009/134776693-a188bc24-235e-482b-b593-5ab7ea001459.png)
-
