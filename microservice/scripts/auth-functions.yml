@@ -1,6 +1,9 @@
 register:
-  handler: controllers/auth/register.handler
   description: AUTH - Registration API.
+  handler:
+    - middlewares/bodyParser.bodyParser
+    - then: middlewares/validations/auth/registrationValidation.validator
+    - then: controllers/auth/register.handler
   package:
     exclude:
       - ./**
@@ -12,8 +15,11 @@ register:
         cors: true
 
 login:
-  handler: controllers/auth/login.handler
   description: AUTH - Login API.
+  handler:
+    - middlewares/bodyParser.bodyParser
+    - then: middlewares/validations/auth/loginValidation.validator
+    - then: controllers/auth/login.handler
   package:
     exclude:
       - ./**
@@ -25,8 +31,10 @@ login:
         cors: true
 
 profile:
-  handler: controllers/auth/profile.handler
   description: AUTH - Get Profile API.
+  handler:
+    - middlewares/authGuard.authGuard
+    - then: controllers/auth/profile.handler
   package:
     exclude:
       - ./**
@@ -34,5 +42,5 @@ profile:
   events:
     - http:
         path: /api/profile
-        method: post
+        method: get
         cors: true
