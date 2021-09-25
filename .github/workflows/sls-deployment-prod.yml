@@ -1,0 +1,26 @@
+on:
+  push:
+    branches:
+      - dev
+      - prod
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install Serverless Framework
+        run: npm install -g serverless
+      - name: Serverless AWS authentication
+        run: sls config credentials --provider aws --key ${{ secrets.AWS_KEY }} --secret ${{ secrets.AWS_SECRET }}
+      - name: Initial Setup
+        run: npm run setup:dev
+      - name: Deploy Microservices
+        run: npm run deploy:dev
