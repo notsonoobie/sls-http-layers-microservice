@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "setup:dev": "npm --prefix ./microservice i"
+    "setup:dev": "npm --prefix ./microservice i",
+    "start:microservice": "npm --prefix ./microservice run start:microservice",
+    "deploy:dev": "npm --prefix ./microservice run deploy:dev:all",
+    "deploy:prod": "npm --prefix ./microservice run deploy:prod:all"
   },
   "keywords": [],
   "author": "",

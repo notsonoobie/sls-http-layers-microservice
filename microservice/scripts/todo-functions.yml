@@ -1,10 +1,14 @@
 gettodos:
-  handler: controllers/todo/gettodos.handler
   description: TODO - Get Todo's API.
+  handler:
+    - middlewares/authGuard.authGuard
+    - then: middlewares/bodyParser.bodyParser
+    - then: middlewares/validations/todo/getTodosValidation.validator
+    - then: controllers/todo/gettodos.handler
   package:
     exclude:
       - ./**
-      - "!./controllers/todo/gettodos*"
+      - '!./controllers/todo/gettodos*'
   events:
     - http:
         path: /api/gettodos
@@ -12,25 +16,31 @@ gettodos:
         cors: true
 
 gettodo:
-  handler: controllers/todo/gettodo.handler
   description: TODO - Get Todo API.
+  handler:
+    - middlewares/authGuard.authGuard
+    - then: controllers/todo/gettodo.handler
   package:
     exclude:
       - ./**
-      - "!./controllers/todo/gettodo*"
+      - '!./controllers/todo/gettodo*'
   events:
     - http:
-        path: /api/gettodo
-        method: post
+        path: /api/gettodo/{id}
+        method: get
         cors: true
 
 createtodo:
-  handler: controllers/todo/createtodo.handler
   description: TODO - Create Todo API.
+  handler:
+    - middlewares/authGuard.authGuard
+    - then: middlewares/bodyParser.bodyParser
+    - then: middlewares/validations/todo/createTodoValidation.validator
+    - then: controllers/todo/createtodo.handler
   package:
     exclude:
       - ./**
-      - "!./controllers/todo/createtodo*"
+      - '!./controllers/todo/createtodo*'
   events:
     - http:
         path: /api/createtodo
@@ -38,27 +48,33 @@ createtodo:
         cors: true
 
 updatetodo:
-  handler: controllers/todo/updatetodo.handler
   description: TODO - Update Todo API.
+  handler:
+    - middlewares/authGuard.authGuard
+    - then: middlewares/bodyParser.bodyParser
+    - then: middlewares/validations/todo/updateTodoValidation.validator
+    - then: controllers/todo/updatetodo.handler
   package:
     exclude:
       - ./**
-      - "!./controllers/todo/updatetodo*"
+      - '!./controllers/todo/updatetodo*'
   events:
     - http:
-        path: /api/updatetodo
+        path: /api/updatetodo/{id}
         method: post
         cors: true
 
 deletetodo:
-  handler: controllers/todo/deletetodo.handler
   description: TODO - Delete Todo API.
+  handler:
+    - middlewares/authGuard.authGuard
+    - then: controllers/todo/deletetodo.handler
   package:
     exclude:
       - ./**
-      - "!./controllers/todo/deletetodo*"
+      - '!./controllers/todo/deletetodo*'
   events:
     - http:
-        path: /api/deletetodo
-        method: post
+        path: /api/deletetodo/{id}
+        method: delete
         cors: true

@@ -4,7 +4,9 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy:dev:all": "make deployDev",
+    "deploy:prod:all": "make deployProd",
+    "start:microservice": "make runall -j"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "c792780e-94ab-4308-8955-f91c8cd2860e",
+		"name": "Serverless Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "View Profile Lamda",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhaHVsQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFF1ekFSRlovcGNvNXZlYTNvTE5SUnVTWFVqZzNhc0YuYmJPVXFBdm5hMTRYSjdBMmtiS0t1IiwibmFtZSI6IlJhaHVsOyBHdXB0YSIsIl9pZCI6IjYxNGYyZWQwODliM2YxNjIxMGUxNmEzNCIsImNyZWF0ZWRBdCI6IjIwMjEtMDktMjVUMTQ6MTQ6NDAuMzA1WiIsInVwZGF0ZWRBdCI6IjIwMjEtMDktMjVUMTQ6MTQ6NDAuMzA1WiIsIl9fdiI6MCwiaWF0IjoxNjMyNTc5MjgwLCJleHAiOjE2MzI2NjU2ODB9.gcdmX0RcyHfV0ZbfCwiIASEayKRGgAX4B0LY5op5Mck",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/dev/api/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dev",
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Profile Lamda",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Rahul; Gupta\",\n    \"email\": \"rahul@gmail.com\",\n    \"password\": \"Pppp@1ppp\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dev/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dev",
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Profile Lamda",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"rahul@gmail.com\",\n    \"password\": \"Pppp@1ppp\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dev/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dev",
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Todo Lamda",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhaHVsQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFF1ekFSRlovcGNvNXZlYTNvTE5SUnVTWFVqZzNhc0YuYmJPVXFBdm5hMTRYSjdBMmtiS0t1IiwibmFtZSI6IlJhaHVsOyBHdXB0YSIsIl9pZCI6IjYxNGYyZWQwODliM2YxNjIxMGUxNmEzNCIsImNyZWF0ZWRBdCI6IjIwMjEtMDktMjVUMTQ6MTQ6NDAuMzA1WiIsInVwZGF0ZWRBdCI6IjIwMjEtMDktMjVUMTQ6MTQ6NDAuMzA1WiIsIl9fdiI6MCwiaWF0IjoxNjMyNTc5MjgwLCJleHAiOjE2MzI2NjU2ODB9.gcdmX0RcyHfV0ZbfCwiIASEayKRGgAX4B0LY5op5Mck",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"todo\": \"Make Lunch\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/dev/api/createtodo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"dev",
+						"api",
+						"createtodo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Todo Lamda",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhaHVsQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFF1ekFSRlovcGNvNXZlYTNvTE5SUnVTWFVqZzNhc0YuYmJPVXFBdm5hMTRYSjdBMmtiS0t1IiwibmFtZSI6IlJhaHVsOyBHdXB0YSIsIl9pZCI6IjYxNGYyZWQwODliM2YxNjIxMGUxNmEzNCIsImNyZWF0ZWRBdCI6IjIwMjEtMDktMjVUMTQ6MTQ6NDAuMzA1WiIsInVwZGF0ZWRBdCI6IjIwMjEtMDktMjVUMTQ6MTQ6NDAuMzA1WiIsIl9fdiI6MCwiaWF0IjoxNjMyNTc5MjgwLCJleHAiOjE2MzI2NjU2ODB9.gcdmX0RcyHfV0ZbfCwiIASEayKRGgAX4B0LY5op5Mck",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/dev/api/gettodo/614f2f96d0412f392a2fe461",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"dev",
+						"api",
+						"gettodo",
+						"614f2f96d0412f392a2fe461"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Todo Lamda",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhaHVsQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFF1ekFSRlovcGNvNXZlYTNvTE5SUnVTWFVqZzNhc0YuYmJPVXFBdm5hMTRYSjdBMmtiS0t1IiwibmFtZSI6IlJhaHVsOyBHdXB0YSIsIl9pZCI6IjYxNGYyZWQwODliM2YxNjIxMGUxNmEzNCIsImNyZWF0ZWRBdCI6IjIwMjEtMDktMjVUMTQ6MTQ6NDAuMzA1WiIsInVwZGF0ZWRBdCI6IjIwMjEtMDktMjVUMTQ6MTQ6NDAuMzA1WiIsIl9fdiI6MCwiaWF0IjoxNjMyNTc5MjgwLCJleHAiOjE2MzI2NjU2ODB9.gcdmX0RcyHfV0ZbfCwiIASEayKRGgAX4B0LY5op5Mck",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/dev/api/deletetodo/614f2f96d0412f392a2fe461",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"dev",
+						"api",
+						"deletetodo",
+						"614f2f96d0412f392a2fe461"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Todo Lamda",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhaHVsQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFF1ekFSRlovcGNvNXZlYTNvTE5SUnVTWFVqZzNhc0YuYmJPVXFBdm5hMTRYSjdBMmtiS0t1IiwibmFtZSI6IlJhaHVsOyBHdXB0YSIsIl9pZCI6IjYxNGYyZWQwODliM2YxNjIxMGUxNmEzNCIsImNyZWF0ZWRBdCI6IjIwMjEtMDktMjVUMTQ6MTQ6NDAuMzA1WiIsInVwZGF0ZWRBdCI6IjIwMjEtMDktMjVUMTQ6MTQ6NDAuMzA1WiIsIl9fdiI6MCwiaWF0IjoxNjMyNTc5MjgwLCJleHAiOjE2MzI2NjU2ODB9.gcdmX0RcyHfV0ZbfCwiIASEayKRGgAX4B0LY5op5Mck"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/dev/api/updatetodo/614f2f96d0412f392a2fe461",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"dev",
+						"api",
+						"updatetodo",
+						"614f2f96d0412f392a2fe461"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Todos Lamda",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhaHVsQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFF1ekFSRlovcGNvNXZlYTNvTE5SUnVTWFVqZzNhc0YuYmJPVXFBdm5hMTRYSjdBMmtiS0t1IiwibmFtZSI6IlJhaHVsOyBHdXB0YSIsIl9pZCI6IjYxNGYyZWQwODliM2YxNjIxMGUxNmEzNCIsImNyZWF0ZWRBdCI6IjIwMjEtMDktMjVUMTQ6MTQ6NDAuMzA1WiIsInVwZGF0ZWRBdCI6IjIwMjEtMDktMjVUMTQ6MTQ6NDAuMzA1WiIsIl9fdiI6MCwiaWF0IjoxNjMyNTc5MjgwLCJleHAiOjE2MzI2NjU2ODB9.gcdmX0RcyHfV0ZbfCwiIASEayKRGgAX4B0LY5op5Mck",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"filter\": {},\n    \"limit\": 10,\n    \"page\": 1,\n    \"sort\": {\n        \"createdAt\": -1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/dev/api/gettodos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"dev",
+						"api",
+						"gettodos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
