@@ -1,0 +1,28 @@
+service: sls-http-layers-microservice-${opt:app}
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  stage: ${opt:stage, 'dev'}
+  lambdaHashingVersion: '20201221'
+  runtime: ${file(./configs/aws/awsconfig.${self:provider.stage}.json):RUNTIME}
+  region: ${file(./configs/aws/awsconfig.${self:provider.stage}.json):AWS_REGION}
+  versionFunctions: false
+
+custom:
+  memorysize: ${file(./configs/aws/awsconfig.${self:provider.stage}.json):MEM_SIZE}
+  timeout: ${file(./configs/aws/awsconfig.${self:provider.stage}.json):TIMEOUT}
+  serverless-offline:
+    httpPort: ${opt:port, 8080}
+    websocketPort: ${opt:wsport, 8081}
+    lambdaPort: ${opt:lmport, 8082}
+
+functions:
+  - ${file(./scripts/${opt:app}-functions.yml)}
+
+plugins:
+  - serverless-middleware
+  - serverless-offline
+  - serverless-dotenv-plugin
+  - serverless-plugin-include-dependencies

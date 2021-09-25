@@ -1,0 +1,38 @@
+register:
+  handler: controllers/auth/register.handler
+  description: AUTH - Registration API.
+  package:
+    exclude:
+      - ./**
+      - '!./controllers/auth/register*'
+  events:
+    - http:
+        path: /api/register
+        method: post
+        cors: true
+
+login:
+  handler: controllers/auth/login.handler
+  description: AUTH - Login API.
+  package:
+    exclude:
+      - ./**
+      - '!./controllers/auth/login*'
+  events:
+    - http:
+        path: /api/login
+        method: post
+        cors: true
+
+profile:
+  handler: controllers/auth/profile.handler
+  description: AUTH - Get Profile API.
+  package:
+    exclude:
+      - ./**
+      - '!./controllers/auth/profile*'
+  events:
+    - http:
+        path: /api/profile
+        method: post
+        cors: true

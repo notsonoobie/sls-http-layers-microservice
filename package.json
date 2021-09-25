@@ -1,0 +1,12 @@
+{
+  "name": "sls-http-layers",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "setup:dev": "npm --prefix ./microservice i"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

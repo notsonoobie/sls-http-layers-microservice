@@ -1,0 +1,64 @@
+gettodos:
+  handler: controllers/todo/gettodos.handler
+  description: TODO - Get Todo's API.
+  package:
+    exclude:
+      - ./**
+      - "!./controllers/todo/gettodos*"
+  events:
+    - http:
+        path: /api/gettodos
+        method: post
+        cors: true
+
+gettodo:
+  handler: controllers/todo/gettodo.handler
+  description: TODO - Get Todo API.
+  package:
+    exclude:
+      - ./**
+      - "!./controllers/todo/gettodo*"
+  events:
+    - http:
+        path: /api/gettodo
+        method: post
+        cors: true
+
+createtodo:
+  handler: controllers/todo/createtodo.handler
+  description: TODO - Create Todo API.
+  package:
+    exclude:
+      - ./**
+      - "!./controllers/todo/createtodo*"
+  events:
+    - http:
+        path: /api/createtodo
+        method: post
+        cors: true
+
+updatetodo:
+  handler: controllers/todo/updatetodo.handler
+  description: TODO - Update Todo API.
+  package:
+    exclude:
+      - ./**
+      - "!./controllers/todo/updatetodo*"
+  events:
+    - http:
+        path: /api/updatetodo
+        method: post
+        cors: true
+
+deletetodo:
+  handler: controllers/todo/deletetodo.handler
+  description: TODO - Delete Todo API.
+  package:
+    exclude:
+      - ./**
+      - "!./controllers/todo/deletetodo*"
+  events:
+    - http:
+        path: /api/deletetodo
+        method: post
+        cors: true
