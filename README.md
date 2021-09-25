@@ -61,3 +61,10 @@ npm run deploy:dev
 ```sh
 npm run deploy:prod
 ```
+
+---
+
+___After Deployment___
+
+![image](https://user-images.githubusercontent.com/54475009/134776693-a188bc24-235e-482b-b593-5ab7ea001459.png)
+
