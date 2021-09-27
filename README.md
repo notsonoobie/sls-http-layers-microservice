@@ -50,25 +50,37 @@ cd microservice/ && make runtodo
 cd microservice/ && make runauth
 ```
 
-5. Dev Deployment
+5. Dev Lamdas Deployment
 
 ```sh
-npm run deploy:dev
+npm run deploy:lamdas:dev
 ```
 
-6. Production Deployment
+6. Production Lamdas Deployment
 
 ```sh
-npm run deploy:prod
+npm run deploy:lamdas:prod
 ```
 
-7. Build Swagger.JSON
+7. Dev Layers Deployment
+
+```sh
+npm run deploy:layers:dev
+```
+
+8. Production Layers Deployment
+
+```sh
+npm run deploy:layers:prod
+```
+
+9. Build Swagger.JSON
 
 ```sh
 npm run build:swagger
 ```
 
-6. Start Swagger UI (Port - 3000 HTTP)
+10. Start Swagger UI (Port - 3000 HTTP)
 
 ```sh
 npm run start:swagger

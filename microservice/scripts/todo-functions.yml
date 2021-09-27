@@ -13,7 +13,7 @@ gettodos:
     - http:
         path: /api/gettodos
         method: post
-        cors: true
+        cors: true # To handle preflight requests
 
 gettodo:
   description: TODO - Get Todo API.
@@ -28,7 +28,7 @@ gettodo:
     - http:
         path: /api/gettodo/{id}
         method: get
-        cors: true
+        cors: true # To handle preflight requests
 
 createtodo:
   description: TODO - Create Todo API.
@@ -45,7 +45,7 @@ createtodo:
     - http:
         path: /api/createtodo
         method: post
-        cors: true
+        cors: true # To handle preflight requests
 
 updatetodo:
   description: TODO - Update Todo API.
@@ -62,7 +62,7 @@ updatetodo:
     - http:
         path: /api/updatetodo/{id}
         method: post
-        cors: true
+        cors: true # To handle preflight requests
 
 deletetodo:
   description: TODO - Delete Todo API.
@@ -77,4 +77,4 @@ deletetodo:
     - http:
         path: /api/deletetodo/{id}
         method: delete
-        cors: true
+        cors: true # To handle preflight requests

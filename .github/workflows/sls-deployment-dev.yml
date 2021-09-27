@@ -1,10 +1,10 @@
 on:
   push:
     branches:
-      - prod
+      - dev
 
 jobs:
-  deploy-prod:
+  deploy-dev:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,5 +21,7 @@ jobs:
         run: sls config credentials --provider aws --key ${{ secrets.AWS_KEY }} --secret ${{ secrets.AWS_SECRET }}
       - name: Initial Setup
         run: npm run setup:dev
-      - name: Deploy Microservices
-        run: npm run deploy:prod
+      - name: Deploy Microservices Layers on DEV
+        run: npm run deploy:layers:dev
+      - name: Deploy Microservices Lamdas on DEV
+        run: npm run deploy:lamdas:dev

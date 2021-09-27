@@ -8,11 +8,13 @@ register:
     exclude:
       - ./**
       - '!./controllers/auth/register*'
+  layers:
+    - arn:aws:lambda:ap-south-1:124263955235:layer:logging:latest # Latest Version of the Layer Stack (Provided by serverless-latest-layer-version)
   events:
     - http:
         path: /api/register
         method: post
-        cors: true
+        cors: true # To handle preflight requests
 
 login:
   description: AUTH - Login API.
@@ -28,7 +30,7 @@ login:
     - http:
         path: /api/login
         method: post
-        cors: true
+        cors: true # To handle preflight requests
 
 profile:
   description: AUTH - Get Profile API.
@@ -43,4 +45,4 @@ profile:
     - http:
         path: /api/profile
         method: get
-        cors: true
+        cors: true # To handle preflight requests

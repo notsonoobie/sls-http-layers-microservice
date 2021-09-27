@@ -1,0 +1,13 @@
+{
+  "name": "layers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy:dev:all": "sls deploy --stage dev",
+    "deploy:prod:all": "sls deploy --stage prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,6 +1,7 @@
 'use strict'
 
 const { UserModel } = require('../../models/User')
+const { logger } = require('logging')
 const { connectToDb } = require('../../configs/db/connectToDb')
 const { _201Message, _400Message } = require('../../common/messages/messages')
 const { generateToken } = require('../../common/auth/jwthelpers')
@@ -12,6 +13,7 @@ module.exports.handler = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false
   let req = event.body
   try {
+    logger('>>>>>>>>>>>>>>>>>>>>>>>>>>>> CALLING LOGGER FROM REGISTER')
     await connectToDb()
     const hashedPassword = await hashPassword(req.password)
     req.password = hashedPassword
