@@ -1,4 +1,3 @@
-const jwt = require('jsonwebtoken')
 const { verifyToken } = require('../common/auth/jwthelpers')
 const { _401Message } = require('../common/messages/messages')
 

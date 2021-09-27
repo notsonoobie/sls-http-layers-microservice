@@ -3,9 +3,9 @@ const { _500Message, _403Message } = require('../common/messages/messages')
 
 const bodyParser = async function (event, context) {
   try {
-    let { body } = event
+    let { body, queryStringParameters } = event
     let reg = /(<|>)/g
-    if (body.match(reg) || JSON.stringify(event.queryStringParameters).match(reg)) {
+    if (body.match(reg) || JSON.stringify(queryStringParameters).match(reg)) {
       context.end()
       return _403Message()
     }
