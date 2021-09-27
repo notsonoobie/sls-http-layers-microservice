@@ -1,0 +1,19 @@
+# serverless.yml
+service: sls-http-layers-${opt:stage, 'dev'}
+
+provider:
+  name: aws
+  stage: ${opt:stage, 'dev'}
+  region: ap-south-1
+
+# You can add up to 5 layers as you want within this property.
+layers:
+  Logging:
+    path: logging
+    name: logging
+    description: Logging UTILS
+    compatibleRuntimes: # optional, a list of runtimes this layer is compatible with
+      - nodejs12.x
+    allowedAccounts:
+      - "*"
+    retain: false # optional, false by default. If true, layer versions are not deleted as new ones are created

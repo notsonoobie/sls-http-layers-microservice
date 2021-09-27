@@ -10,6 +10,9 @@ provider:
   region: ${file(./configs/aws/awsconfig.${self:provider.stage}.json):AWS_REGION}
   versionFunctions: false
 
+package:
+  individually: true
+
 custom:
   memorysize: ${file(./configs/aws/awsconfig.${self:provider.stage}.json):MEM_SIZE}
   timeout: ${file(./configs/aws/awsconfig.${self:provider.stage}.json):TIMEOUT}
