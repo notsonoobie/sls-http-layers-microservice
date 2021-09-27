@@ -90,4 +90,15 @@ npm run start:swagger
 
 **_After Deployment_**
 
-![image](https://user-images.githubusercontent.com/54475009/134776693-a188bc24-235e-482b-b593-5ab7ea001459.png)
+1. STACK (dev + prod) - 
+
+![image](https://user-images.githubusercontent.com/54475009/134966211-8e26e83e-b024-4125-b8f9-e84381eb976b.png)
+
+2. FUNCTIONS (dev + prod) -
+
+![image](https://user-images.githubusercontent.com/54475009/134966379-1dab85ad-193a-48ce-bbfd-181e80749a87.png)
+
+3. Layer - 
+
+![image](https://user-images.githubusercontent.com/54475009/134966587-91c4ae41-8076-4cff-bcb6-3468ecb6cda3.png)
+
