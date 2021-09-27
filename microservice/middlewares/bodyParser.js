@@ -1,9 +1,14 @@
 const { parseString } = require('xml2js')
-const { _500Message } = require('../common/messages/messages')
+const { _500Message, _403Message } = require('../common/messages/messages')
 
 const bodyParser = async function (event, context) {
   try {
     let { body } = event
+    let reg = /(<|>)/g
+    if (body.match(reg) || JSON.stringify(event.queryStringParameters).match(reg)) {
+      context.end()
+      return _403Message()
+    }
     const contentType = event.headers['Content-Type']
     if (body) {
       if (contentType === 'application/xml') {

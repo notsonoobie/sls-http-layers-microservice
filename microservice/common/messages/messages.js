@@ -28,6 +28,16 @@ const _400Message = (msg) => {
   }
 }
 
+const _403Message = (msg) => {
+  return {
+    statusCode: 403,
+    body: JSON.stringify({
+      success: false,
+      message: msg || 'Forbidden',
+    }),
+  }
+}
+
 const _404Message = (msg) => {
   return {
     statusCode: 404,
@@ -65,4 +75,5 @@ module.exports = {
   _404Message,
   _200Message,
   _201Message,
+  _403Message,
 }

@@ -6,3 +6,4 @@ jspm_packages
 .serverless
 
 microservice/swagger/index.json
+node_modules
