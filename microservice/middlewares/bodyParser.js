@@ -13,7 +13,7 @@ const bodyParser = async function (event, context) {
     if (body) {
       if (contentType === 'application/xml') {
         body = await new Promise((res, rej) =>
-          parseString(body, (err, result) => {
+          parseString(body, { explicitArray: false }, (err, result) => {
             if (err) rej(err)
             res(result)
           }),
