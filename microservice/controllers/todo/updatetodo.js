@@ -14,8 +14,8 @@ module.exports.handler = async (event, context) => {
     await connectToDb()
     let todo = await TodoModel.findOneAndUpdate(
       {
-        userId: mongoose.Types.ObjectId(event.user._id),
         _id: mongoose.Types.ObjectId(event.pathParameters.id),
+        userId: mongoose.Types.ObjectId(event.user._id),
       },
       {
         $set: req,

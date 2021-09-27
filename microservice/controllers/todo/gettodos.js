@@ -16,8 +16,8 @@ module.exports.handler = async (event, context) => {
     let [data, count] = await Promise.all([
       TodoModel.find(
         {
-          userId: mongoose.Types.ObjectId(event.user._id),
           ...req.filters,
+          userId: mongoose.Types.ObjectId(event.user._id),
         },
         {},
         { sort: req.sort },
@@ -26,8 +26,8 @@ module.exports.handler = async (event, context) => {
         .limit(req.limit)
         .lean(),
       TodoModel.find({
-        userId: mongoose.Types.ObjectId(event.user._id),
         ...req.filters,
+        userId: mongoose.Types.ObjectId(event.user._id),
       }).countDocuments(),
     ])
     return _200Message({

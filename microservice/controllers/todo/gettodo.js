@@ -12,8 +12,8 @@ module.exports.handler = async (event, context) => {
   try {
     await connectToDb()
     let todo = await TodoModel.findOne({
-      userId: mongoose.Types.ObjectId(event.user._id),
       _id: mongoose.Types.ObjectId(event.pathParameters.id),
+      userId: mongoose.Types.ObjectId(event.user._id),
     }).lean()
     return _200Message(todo || {})
   } catch (error) {
