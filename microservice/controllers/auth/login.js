@@ -24,7 +24,6 @@ module.exports.handler = async (event, context) => {
       token,
     })
   } catch (error) {
-    context.end()
     return _400Message(error.message)
   }
 }

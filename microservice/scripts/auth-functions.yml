@@ -35,8 +35,7 @@ login:
 profile:
   description: AUTH - Get Profile API.
   handler:
-    - middlewares/authGuard.authGuard
-    - then: controllers/auth/profile.handler
+    - controllers/auth/profile.handler
   package:
     exclude:
       - ./**
@@ -46,3 +45,4 @@ profile:
         path: /api/profile
         method: get
         cors: true # To handle preflight requests
+        authorizer: jwtauthorizer # CUSTOM JWT AUTHORIZER

@@ -18,11 +18,11 @@ const bodyParser = async function (event, context) {
             res(result)
           }),
         )
+        event.headers['Content-Type'] = 'application/json'
       } else if (contentType === 'application/json') {
         body = JSON.parse(body)
       }
       event.body = body
-      event.headers['Content-Type'] = 'application/json'
     }
   } catch (error) {
     context.end()

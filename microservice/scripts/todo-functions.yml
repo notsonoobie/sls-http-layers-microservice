@@ -1,8 +1,7 @@
 gettodos:
   description: TODO - Get Todo's API.
   handler:
-    - middlewares/authGuard.authGuard
-    - then: middlewares/bodyParser.bodyParser
+    - middlewares/bodyParser.bodyParser
     - then: middlewares/validations/todo/getTodosValidation.validator
     - then: controllers/todo/gettodos.handler
   package:
@@ -14,12 +13,12 @@ gettodos:
         path: /api/gettodos
         method: post
         cors: true # To handle preflight requests
+        authorizer: jwtauthorizer # CUSTOM JWT AUTHORIZER
 
 gettodo:
   description: TODO - Get Todo API.
   handler:
-    - middlewares/authGuard.authGuard
-    - then: controllers/todo/gettodo.handler
+    - controllers/todo/gettodo.handler
   package:
     exclude:
       - ./**
@@ -29,12 +28,12 @@ gettodo:
         path: /api/gettodo/{id}
         method: get
         cors: true # To handle preflight requests
+        authorizer: jwtauthorizer # CUSTOM JWT AUTHORIZER
 
 createtodo:
   description: TODO - Create Todo API.
   handler:
-    - middlewares/authGuard.authGuard
-    - then: middlewares/bodyParser.bodyParser
+    - middlewares/bodyParser.bodyParser
     - then: middlewares/validations/todo/createTodoValidation.validator
     - then: controllers/todo/createtodo.handler
   package:
@@ -46,12 +45,12 @@ createtodo:
         path: /api/createtodo
         method: post
         cors: true # To handle preflight requests
+        authorizer: jwtauthorizer # CUSTOM JWT AUTHORIZER
 
 updatetodo:
   description: TODO - Update Todo API.
   handler:
-    - middlewares/authGuard.authGuard
-    - then: middlewares/bodyParser.bodyParser
+    - middlewares/bodyParser.bodyParser
     - then: middlewares/validations/todo/updateTodoValidation.validator
     - then: controllers/todo/updatetodo.handler
   package:
@@ -63,12 +62,12 @@ updatetodo:
         path: /api/updatetodo/{id}
         method: post
         cors: true # To handle preflight requests
+        authorizer: jwtauthorizer # CUSTOM JWT AUTHORIZER
 
 deletetodo:
   description: TODO - Delete Todo API.
   handler:
-    - middlewares/authGuard.authGuard
-    - then: controllers/todo/deletetodo.handler
+    - controllers/todo/deletetodo.handler
   package:
     exclude:
       - ./**
@@ -78,3 +77,5 @@ deletetodo:
         path: /api/deletetodo/{id}
         method: delete
         cors: true # To handle preflight requests
+        authorizer: jwtauthorizer # CUSTOM JWT AUTHORIZER
+

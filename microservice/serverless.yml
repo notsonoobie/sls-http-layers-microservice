@@ -22,6 +22,11 @@ custom:
     lambdaPort: ${opt:lmport, 8082}
 
 functions:
+  - jwtauthorizer: # GLOBAL AUTHORIZER LAMDA
+      handler: ./authorizers/jwtauthorizer.authorizer
+      package:
+        exclude:
+          - ./**
   - ${file(./scripts/${opt:app}-functions.yml)}
 
 plugins:

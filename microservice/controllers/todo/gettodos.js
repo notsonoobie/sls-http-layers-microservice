@@ -9,6 +9,7 @@ module.exports.handler = async (event, context) => {
   // Make sure to add this so you can re-use `conn` between function calls.
   // See https://www.mongodb.com/blog/post/serverless-development-with-nodejs-aws-lambda-mongodb-atlas
   context.callbackWaitsForEmptyEventLoop = false
+  let decodedUser = JSON.parse(event.requestContext.authorizer.user)
   let req = event.body
   try {
     await connectToDb()
@@ -17,7 +18,7 @@ module.exports.handler = async (event, context) => {
       TodoModel.find(
         {
           ...req.filters,
-          userId: mongoose.Types.ObjectId(event.user._id),
+          userId: mongoose.Types.ObjectId(decodedUser._id),
         },
         {},
         { sort: req.sort },
@@ -27,7 +28,7 @@ module.exports.handler = async (event, context) => {
         .lean(),
       TodoModel.find({
         ...req.filters,
-        userId: mongoose.Types.ObjectId(event.user._id),
+        userId: mongoose.Types.ObjectId(decodedUser._id),
       }).countDocuments(),
     ])
     return _200Message({
@@ -35,7 +36,6 @@ module.exports.handler = async (event, context) => {
       count,
     })
   } catch (error) {
-    context.end()
     return _400Message(error.message)
   }
 }

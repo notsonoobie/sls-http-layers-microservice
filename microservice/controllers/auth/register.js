@@ -18,13 +18,13 @@ module.exports.handler = async (event, context) => {
     const hashedPassword = await hashPassword(req.password)
     req.password = hashedPassword
     let user = await UserModel.create(req).then((res) => res.toObject())
+    delete user.password
     const token = generateToken(user)
     return _201Message({
       ...user,
       token,
     })
   } catch (error) {
-    context.end()
     return _400Message(error.message)
   }
 }
