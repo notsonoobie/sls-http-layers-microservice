@@ -9,7 +9,9 @@ register:
       - ./**
       - '!./controllers/auth/register*'
   layers:
-    - arn:aws:lambda:ap-south-1:124263955235:layer:logging:latest # Latest Version of the Layer Stack (Provided by serverless-latest-layer-version)
+    # Latest Version of the Layer Stack (Provided by serverless-latest-layer-version)
+    - arn:aws:lambda:ap-south-1:124263955235:layer:logging:latest # LOGGING LAYER
+    - arn:aws:lambda:ap-south-1:124263955235:layer:core:latest # CORE LAYER
   events:
     - http:
         path: /api/register

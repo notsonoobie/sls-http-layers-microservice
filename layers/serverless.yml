@@ -13,3 +13,7 @@ layers:
     path: logging
     description: Logging Layer
     retain: true # optional, false by default. If true, layer versions are not deleted as new ones are created
+  core:
+    path: core
+    description: Core Layer - AWS Utils
+    retain: true # optional, false by default. If true, layer versions are not deleted as new ones are created
