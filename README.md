@@ -104,3 +104,33 @@ npm run start:swagger
 
 ![image](https://user-images.githubusercontent.com/54475009/134966587-91c4ae41-8076-4cff-bcb6-3468ecb6cda3.png)
 
+---
+
+**_Endpoints_**
+
+1. DEV - 
+```js
+  POST - https://tdtxffh3di.execute-api.ap-south-1.amazonaws.com/dev/api/register
+  POST - https://tdtxffh3di.execute-api.ap-south-1.amazonaws.com/dev/api/login
+  GET - https://tdtxffh3di.execute-api.ap-south-1.amazonaws.com/dev/api/profile
+  
+  POST - https://ruog6utrwa.execute-api.ap-south-1.amazonaws.com/dev/api/gettodos
+  GET - https://ruog6utrwa.execute-api.ap-south-1.amazonaws.com/dev/api/gettodo/{id}
+  POST - https://ruog6utrwa.execute-api.ap-south-1.amazonaws.com/dev/api/createtodo
+  POST - https://ruog6utrwa.execute-api.ap-south-1.amazonaws.com/dev/api/updatetodo/{id}
+  DELETE - https://ruog6utrwa.execute-api.ap-south-1.amazonaws.com/dev/api/deletetodo/{id}
+```
+
+2. PROD - 
+```js
+  POST - https://ybr64p8xp1.execute-api.ap-south-1.amazonaws.com/prod/api/register
+  POST - https://ybr64p8xp1.execute-api.ap-south-1.amazonaws.com/prod/api/login
+  GET - https://ybr64p8xp1.execute-api.ap-south-1.amazonaws.com/prod/api/profile
+  
+  POST - https://m2uwes5dbf.execute-api.ap-south-1.amazonaws.com/prod/api/gettodos
+  GET - https://m2uwes5dbf.execute-api.ap-south-1.amazonaws.com/prod/api/gettodo/{id}
+  POST - https://m2uwes5dbf.execute-api.ap-south-1.amazonaws.com/prod/api/createtodo
+  POST - https://m2uwes5dbf.execute-api.ap-south-1.amazonaws.com/prod/api/updatetodo/{id}
+  DELETE - https://m2uwes5dbf.execute-api.ap-south-1.amazonaws.com/prod/api/deletetodo/{id}
+```
+
