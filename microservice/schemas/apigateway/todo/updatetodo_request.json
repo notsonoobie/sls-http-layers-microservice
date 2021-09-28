@@ -1,0 +1,16 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "UpdateTodoRequestSchema",
+  "type": "object",
+  "properties": {
+    "todo": {
+      "title": "TO-DO",
+      "type": "string"
+    },
+    "status": {
+      "title": "Todo Status",
+      "type": "boolean"
+    }
+  }
+}

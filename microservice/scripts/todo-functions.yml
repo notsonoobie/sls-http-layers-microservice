@@ -2,7 +2,6 @@ gettodos:
   description: TODO - Get Todo's API.
   handler:
     - middlewares/bodyParser.bodyParser
-    - then: middlewares/validations/todo/getTodosValidation.validator
     - then: controllers/todo/gettodos.handler
   package:
     exclude:
@@ -14,6 +13,9 @@ gettodos:
         method: post
         cors: true # To handle preflight requests
         authorizer: jwtauthorizer # CUSTOM JWT AUTHORIZER
+        request:
+          schema:
+            application/json: ${file(./schemas/apigateway/todo/gettodos_request.json)}
 
 gettodo:
   description: TODO - Get Todo API.
@@ -34,7 +36,6 @@ createtodo:
   description: TODO - Create Todo API.
   handler:
     - middlewares/bodyParser.bodyParser
-    - then: middlewares/validations/todo/createTodoValidation.validator
     - then: controllers/todo/createtodo.handler
   package:
     exclude:
@@ -46,12 +47,14 @@ createtodo:
         method: post
         cors: true # To handle preflight requests
         authorizer: jwtauthorizer # CUSTOM JWT AUTHORIZER
+        request:
+          schema:
+            application/json: ${file(./schemas/apigateway/todo/createtodo_request.json)}
 
 updatetodo:
   description: TODO - Update Todo API.
   handler:
     - middlewares/bodyParser.bodyParser
-    - then: middlewares/validations/todo/updateTodoValidation.validator
     - then: controllers/todo/updatetodo.handler
   package:
     exclude:
@@ -63,6 +66,9 @@ updatetodo:
         method: post
         cors: true # To handle preflight requests
         authorizer: jwtauthorizer # CUSTOM JWT AUTHORIZER
+        request:
+          schema:
+            application/json: ${file(./schemas/apigateway/todo/updatetodo_request.json)}
 
 deletetodo:
   description: TODO - Delete Todo API.
@@ -78,4 +84,3 @@ deletetodo:
         method: delete
         cors: true # To handle preflight requests
         authorizer: jwtauthorizer # CUSTOM JWT AUTHORIZER
-

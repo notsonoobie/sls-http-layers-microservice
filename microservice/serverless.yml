@@ -9,6 +9,13 @@ provider:
   runtime: ${file(./configs/aws/awsconfig.${self:provider.stage}.json):RUNTIME}
   region: ${file(./configs/aws/awsconfig.${self:provider.stage}.json):AWS_REGION}
   versionFunctions: false
+#   apiGateway:
+#     request:
+#       schemas:
+#         registerRequestSchema:
+#           name: RegisterRequestSchema
+#           description: 'Validation Schema for Register API'
+#           schema: ${file(./schemas/apigateway/auth/register_request.json)}
 
 package:
   individually: true

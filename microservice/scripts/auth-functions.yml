@@ -2,7 +2,6 @@ register:
   description: AUTH - Registration API.
   handler:
     - middlewares/bodyParser.bodyParser
-    - then: middlewares/validations/auth/registrationValidation.validator
     - then: controllers/auth/register.handler
   package:
     exclude:
@@ -15,12 +14,14 @@ register:
         path: /api/register
         method: post
         cors: true # To handle preflight requests
+        request:
+          schema:
+            application/json: ${file(./schemas/apigateway/auth/register_request.json)}
 
 login:
   description: AUTH - Login API.
   handler:
     - middlewares/bodyParser.bodyParser
-    - then: middlewares/validations/auth/loginValidation.validator
     - then: controllers/auth/login.handler
   package:
     exclude:
@@ -31,6 +32,9 @@ login:
         path: /api/login
         method: post
         cors: true # To handle preflight requests
+        request:
+          schema:
+            application/json: ${file(./schemas/apigateway/auth/login_request.json)}
 
 profile:
   description: AUTH - Get Profile API.

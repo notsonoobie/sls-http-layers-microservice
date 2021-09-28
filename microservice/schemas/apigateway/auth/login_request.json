@@ -1,0 +1,21 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "LoginRequestSchema",
+  "type": "object",
+  "required": ["email", "password"],
+  "properties": {
+    "email": {
+      "title": "Email",
+      "type": "string",
+      "default": "",
+      "pattern": "(.+)@(.+){2,}.(.+){2,}"
+    },
+    "password": {
+      "title": "Passowrd",
+      "type": "string",
+      "default": "",
+      "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])"
+    }
+  }
+}

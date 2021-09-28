@@ -1,0 +1,29 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "GetTodosRequestSchema",
+  "type": "object",
+  "required": ["filter", "limit", "page", "sort"],
+  "properties": {
+    "filter": {
+      "title": "Filter Pipeline",
+      "type": "object",
+      "default": {}
+    },
+    "limit": {
+      "title": "Data Limit",
+      "type": "integer",
+      "default": 20
+    },
+    "page": {
+      "title": "Page Number",
+      "type": "integer",
+      "default": 1
+    },
+    "sort": {
+      "title": "Sorting Pipeline",
+      "type": "object",
+      "default": {}
+    }
+  }
+}

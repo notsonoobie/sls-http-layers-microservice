@@ -1,0 +1,26 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RegisterRequestSchema",
+  "type": "object",
+  "required": ["name", "email", "password"],
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string",
+      "default": ""
+    },
+    "email": {
+      "title": "Email",
+      "type": "string",
+      "default": "",
+      "pattern": "(.+)@(.+){2,}.(.+){2,}"
+    },
+    "password": {
+      "title": "Passowrd",
+      "type": "string",
+      "default": "",
+      "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])"
+    }
+  }
+}
