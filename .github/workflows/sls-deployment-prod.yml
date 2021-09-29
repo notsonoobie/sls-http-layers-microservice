@@ -17,6 +17,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install Serverless Framework
         run: npm install -g serverless
+      - env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+          JWTSECRET: ${{ secrets.JWTSECRET }}
       - name: Serverless AWS authentication
         run: sls config credentials --provider aws --key ${{ secrets.AWS_KEY }} --secret ${{ secrets.AWS_SECRET }}
       - name: Initial Setup
