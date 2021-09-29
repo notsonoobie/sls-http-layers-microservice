@@ -1,6 +1,6 @@
 {
-    "AWS_REGION": "ap-south-1",
-    "RUNTIME": "nodejs12.x",
-    "MEM_SIZE": 256,
-    "TIMEOUT": 180
+  "AWS_REGION": "ap-south-1",
+  "RUNTIME": "nodejs14.x",
+  "MEM_SIZE": 256,
+  "TIMEOUT": 180
 }
