@@ -1,0 +1,33 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        }
+    },
+    "[json]": {
+        "editor.formatOnSave": true,
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace",
+        "gitlens.codeLens.scopes": ["document"]
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.wordWrap": "on",
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#121212",
+        "activityBar.activeBackground": "#610094",
+        "activityBar.activeFocusBorder": "#150050",
+        "titleBar.activeBackground": "#150050",
+        "titleBar.activeForeground": "#150050"
+    }
+}
