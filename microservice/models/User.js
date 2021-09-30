@@ -1,39 +1,39 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema(
-  {
-    email: {
-      type: mongoose.SchemaTypes.String,
-      required: true,
-      unique: true,
+    {
+        email: {
+            type: mongoose.SchemaTypes.String,
+            required: true,
+            unique: true,
+        },
+        password: {
+            type: mongoose.SchemaTypes.String,
+            required: true,
+            select: false,
+        },
+        name: {
+            type: mongoose.SchemaTypes.String,
+            required: true,
+        },
     },
-    password: {
-      type: mongoose.SchemaTypes.String,
-      required: true,
-      select: false,
+    {
+        timestamps: true,
+        strict: true,
     },
-    name: {
-      type: mongoose.SchemaTypes.String,
-      required: true,
-    },
-  },
-  {
-    timestamps: true,
-    strict: true,
-  },
-)
+);
 
 UserSchema.post('save', function (error, doc, next) {
-  if (error.name === 'MongoServerError' && error.code === 11000) {
-    next(new Error('Email already exists.'))
-  } else {
-    next()
-  }
-})
+    if (error.name === 'MongoServerError' && error.code === 11000) {
+        next(new Error('Email already exists.'));
+    } else {
+        next();
+    }
+});
 
-const UserModel = mongoose.model('user', UserSchema)
+const UserModel = mongoose.model('user', UserSchema);
 
 module.exports = {
-  UserModel,
-  UserSchema,
-}
+    UserModel,
+    UserSchema,
+};

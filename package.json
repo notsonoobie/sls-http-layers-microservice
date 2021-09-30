@@ -1,38 +1,43 @@
 {
-  "name": "sls-http-layers",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "setup:dev": "npm --prefix ./microservice i",
-    "start:microservice": "npm --prefix ./microservice run start:microservice",
-    "deploy:lamdas:dev": "npm --prefix ./microservice run deploy:dev:all",
-    "deploy:lamdas:prod": "npm --prefix ./microservice run deploy:prod:all",
-    "deploy:layers:dev": "npm --prefix ./layers run deploy:dev:all",
-    "deploy:layers:prod": "npm --prefix ./layers run deploy:prod:all",
-    "build:swagger": "npm --prefix ./microservice run build:swagger",
-    "start:swagger": "npm --prefix ./microservice run start:swagger",
-    "lint": "node_modules/.bin/eslint .",
-    "lint-fix": "node_modules/.bin/eslint . --fix",
-    "format": "node_modules/.bin/prettier --config .prettierrc \"**/*.js\" --write",
-    "format-test": "node_modules/.bin/prettier --config .prettierrc \"**/*.js\" -l",
-    "precommit-check": "sh test/all.sh"
-  },
-  "lint-staged": {
-    "**/*.js": [
-      "prettier --config .prettierrc -l",
-      "node_modules/.bin/eslint"
-    ]
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
-    "prettier": "^2.4.1"
-  }
+    "name": "sls-http-layers",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "setup:dev": "npm --prefix ./microservice i",
+        "start:microservice": "npm --prefix ./microservice run start:microservice",
+        "deploy:lamdas:dev": "npm --prefix ./microservice run deploy:dev:all",
+        "deploy:lamdas:prod": "npm --prefix ./microservice run deploy:prod:all",
+        "deploy:layers:dev": "npm --prefix ./layers run deploy:dev:all",
+        "deploy:layers:prod": "npm --prefix ./layers run deploy:prod:all",
+        "build:swagger": "npm --prefix ./microservice run build:swagger",
+        "start:swagger": "npm --prefix ./microservice run start:swagger",
+        "lint": "eslint .",
+        "lint-fix": "eslint --fix .",
+        "format": "prettier --write \"**/*.js\""
+    },
+    "lint-staged": {
+        "*.js": [
+            "npm run format",
+            "git add"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "eslint": "^7.32.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.24.2",
+        "eslint-plugin-prettier": "^4.0.0",
+        "husky": "^7.0.2",
+        "lint-staged": "^11.1.2",
+        "prettier": "^2.4.1"
+    }
 }
