@@ -1,26 +1,26 @@
 # Serverless - Microservices
 
-- #### Auth Service
-  - #### Registration API [POST]
-  - #### Login API [POST]
-  - #### View Profile API [GET]
-- #### Todo Service
-  - #### Get Todo By ID API [GET]
-  - #### Get Todos API [POST]
-  - #### Create Todo API [POST]
-  - #### Update Todo API [POST]
-  - #### Delete Todo API [DELETE]
+-   #### Auth Service
+    -   #### Registration API [POST]
+    -   #### Login API [POST]
+    -   #### View Profile API [GET]
+-   #### Todo Service
+    -   #### Get Todo By ID API [GET]
+    -   #### Get Todos API [POST]
+    -   #### Create Todo API [POST]
+    -   #### Update Todo API [POST]
+    -   #### Delete Todo API [DELETE]
 
 ---
 
 #### Requirements
 
-- **Node.JS (12+)**
-- **NPM**
-- **AWS CLI**
-- **Serverless**
-- **make**
-- **Mongo DB Server**
+-   **Node.JS (12+)**
+-   **NPM**
+-   **AWS CLI**
+-   **Serverless**
+-   **make**
+-   **Mongo DB Server**
 
 ---
 
@@ -29,7 +29,7 @@
 1. Base Project Setup
 
 ```sh
-npm run setup:dev
+npm run setup
 ```
 
 2. Start Microservice
