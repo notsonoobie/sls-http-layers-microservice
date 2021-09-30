@@ -1,8 +1,8 @@
 'use strict'
 
 const { UserModel } = require('../../models/User')
-const { logger } = require('logging')
-const { coreModules, AWS } = require('core')
+// const { logger } = require('logging')
+// const { coreModules, AWS } = require('core')
 const { connectToDb } = require('../../configs/db/connectToDb')
 const {
   _201Message,
@@ -18,16 +18,6 @@ module.exports.handler = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false
   let req = event.body
   try {
-    // logger('>>>>>>>>>>>>>>>>>>>>>>>>>>>> CALLING LOGGER FROM REGISTER')
-    coreModules.init({
-      region: 'ap-south-1',
-    })
-    await coreModules.__createRestApi({
-      restApiId: 'nprjg3tyfl',
-      parentPathPart: 'register',
-      newPath: 'debug',
-    })
-    return _200Message()
     await connectToDb()
     const hashedPassword = await hashPassword(req.password)
     req.password = hashedPassword
