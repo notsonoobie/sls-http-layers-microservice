@@ -1,0 +1,6 @@
+.eslintrc
+/node_modules
+/layers/core/nodejs/node_modules/core/node_modules
+/layers/logging/nodejs/node_modules/logging/node_modules
+/microservice/node_modules
+/microservice/swagger

@@ -10,10 +10,33 @@
     "deploy:layers:dev": "npm --prefix ./layers run deploy:dev:all",
     "deploy:layers:prod": "npm --prefix ./layers run deploy:prod:all",
     "build:swagger": "npm --prefix ./microservice run build:swagger",
-    "start:swagger": "npm --prefix ./microservice run start:swagger"
+    "start:swagger": "npm --prefix ./microservice run start:swagger",
+    "lint": "node_modules/.bin/eslint .",
+    "lint-fix": "node_modules/.bin/eslint . --fix",
+    "format": "node_modules/.bin/prettier --config .prettierrc \"**/*.js\" --write",
+    "format-test": "node_modules/.bin/prettier --config .prettierrc \"**/*.js\" -l"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "node_modules/.bin/lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "prettier --config .prettierrc -l",
+      "node_modules/.bin/eslint"
+    ]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1"
+  }
 }

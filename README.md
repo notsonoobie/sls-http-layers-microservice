@@ -90,7 +90,7 @@ npm run start:swagger
 
 **_After Deployment_**
 
-1. STACK (dev + prod) - 
+1. STACK (dev + prod) -
 
 ![image](https://user-images.githubusercontent.com/54475009/134966211-8e26e83e-b024-4125-b8f9-e84381eb976b.png)
 
@@ -100,37 +100,8 @@ npm run start:swagger
 
 ![image](https://user-images.githubusercontent.com/54475009/134966980-7fc79181-bbea-4d1e-ba7b-08fb2fc3cfac.png)
 
-3. Layer - 
+3. Layer -
 
 ![image](https://user-images.githubusercontent.com/54475009/134966587-91c4ae41-8076-4cff-bcb6-3468ecb6cda3.png)
 
 ---
-
-**_Endpoints_**
-
-1. DEV - 
-```js
-  POST - https://tdtxffh3di.execute-api.ap-south-1.amazonaws.com/dev/api/register
-  POST - https://tdtxffh3di.execute-api.ap-south-1.amazonaws.com/dev/api/login
-  GET - https://tdtxffh3di.execute-api.ap-south-1.amazonaws.com/dev/api/profile
-  
-  POST - https://ruog6utrwa.execute-api.ap-south-1.amazonaws.com/dev/api/gettodos
-  GET - https://ruog6utrwa.execute-api.ap-south-1.amazonaws.com/dev/api/gettodo/{id}
-  POST - https://ruog6utrwa.execute-api.ap-south-1.amazonaws.com/dev/api/createtodo
-  POST - https://ruog6utrwa.execute-api.ap-south-1.amazonaws.com/dev/api/updatetodo/{id}
-  DELETE - https://ruog6utrwa.execute-api.ap-south-1.amazonaws.com/dev/api/deletetodo/{id}
-```
-
-2. PROD - 
-```js
-  POST - https://ybr64p8xp1.execute-api.ap-south-1.amazonaws.com/prod/api/register
-  POST - https://ybr64p8xp1.execute-api.ap-south-1.amazonaws.com/prod/api/login
-  GET - https://ybr64p8xp1.execute-api.ap-south-1.amazonaws.com/prod/api/profile
-  
-  POST - https://m2uwes5dbf.execute-api.ap-south-1.amazonaws.com/prod/api/gettodos
-  GET - https://m2uwes5dbf.execute-api.ap-south-1.amazonaws.com/prod/api/gettodo/{id}
-  POST - https://m2uwes5dbf.execute-api.ap-south-1.amazonaws.com/prod/api/createtodo
-  POST - https://m2uwes5dbf.execute-api.ap-south-1.amazonaws.com/prod/api/updatetodo/{id}
-  DELETE - https://m2uwes5dbf.execute-api.ap-south-1.amazonaws.com/prod/api/deletetodo/{id}
-```
-
