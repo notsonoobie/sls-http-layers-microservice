@@ -2,10 +2,9 @@
 microservice/node_modules
 layers/core/nodejs/node_modules/core/node_modules
 layers/logging/nodejs/node_modules/logging/node_modules
+/node_modules
 jspm_packages
 
 # Serverless directories
 .serverless
-
 microservice/swagger/index.json
-/node_modules

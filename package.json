@@ -1,9 +1,9 @@
 {
     "name": "sls-http-layers",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "",
     "scripts": {
-        "setup:dev": "npm --prefix ./microservice i",
+        "setup": "(npm i); (npm --prefix ./microservice i); (npm --prefix ./layers/logging/nodejs/node_modules/logging i); (npm --prefix ./layers/core/nodejs/node_modules/core i);",
         "start:microservice": "npm --prefix ./microservice run start:microservice",
         "deploy:lamdas:dev": "npm --prefix ./microservice run deploy:dev:all",
         "deploy:lamdas:prod": "npm --prefix ./microservice run deploy:prod:all",
